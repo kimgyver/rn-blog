@@ -11,7 +11,8 @@ const BlogPostForm = ({ onSubmit, initialValues }) => {
         <Text style={styles.label} >Enter Content:</Text>
         <TextInput style={styles.input} value={content} onChangeText={setContent}/>
         <Button 
-            title='Add Blog Post'
+            title={(initialValues.content === '' && initialValues.title === '') 
+                    ?  'Add Blog Post' : 'Edit Blog Post' }
             onPress={()=>{ onSubmit(title, content) }}
         />
     </View>
